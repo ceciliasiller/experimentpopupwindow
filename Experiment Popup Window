@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <html lang="en"></html>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width intial-scale=1">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  <!-- Icon -->
+  
+<i class="fa fa-flask" id="experimentBtn" style="font-size:40px; color:yellow; margin-top: 100px; margin-left:600px; text-align:center;" onClick="confirm_process()">
+</i> 
+
+<div id="simpleExperiment" class="experiment">
+<div class="experiment-content">
+  <!-- Header -->
+  <div class="experiment-header">
+ <span class="closeBtn">&times;</span>
+ <h4 style="color: gold; text-align: center;">Hello!</h4>
+  </div>  
+  <!-- Body -->
+ <div class="experiment-body"> 
+ <p>If you want take part to improve this Website, please, Contact Us</p>
+  </div>  
+
+<div class="3-container 3-teal" style="overflow: hidden;">
+                                     
+<form style="color: #FFD700; text-align: left;">
+                                                      Nickname:<br />
+                                                      <input type="text" name="Nname" required="" style="border-style:dotted solid;"/><br />
+                                                      Email:<br />
+                                                      <input type="text" required="" name="email" style="border-style:dotted solid;" /><br />
+                                                      Your Message:<br />
+                                                      <textarea name="message" required="" rows="7" cols="30" style="border-style:dotted solid;"></textarea><br />
+                                                      <input type="submit" value="Welcome"/>
+                                                      </form>
+                                              </div>
+                                            </div>
+           </div>
+<style>
+body{
+  background-color: #000;
+}
+
+.experiment{
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      overflow: aouto;
+      background-color: rgba(0, 0, 0, 0, 5);
+      margin-top: -250px;
+    }
+
+    .experiment-content{
+      background-color: #0D0D0D;
+      margin: 20% auto;
+      padding: 20px;
+      width: 70%;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0, 2,) 0 7px 20px 0 
+      rgba(0, 0, 0, 17);
+      animation-name: modalopen;
+      animation-duration: 4s;
+      }
+
+.experiment-header{
+  padding:20px;
+  border-width: 5px;
+  border-style:dashed;
+  border-color:#333;
+}
+
+.experiment-body{
+  padding: 10px 20px;
+  text-align:left;
+  color: #8E2323;
+}
+    .closeBtn{
+      color: gold;
+      float: right;
+      font-size: 30px;
+    }
+    .closeBtn:hover,.close:focus{
+      color: #8B2323;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @keyframes experimentopen{
+      from{opacity: 0}
+      to{opacity: 1}
+    }
+</style>
+<script>
+// Get experiment element -w3-
+var experiment = document.getElementById('simpleExperiment');
+// Get open experiment button
+var experimentBtn = document.getElementById('experimentBtn');
+// Get close button
+var closeBtn = document.getElementsByClassName('closeBtn')[0];
+// Listener for open click
+experimentBtn.addEventListener('click', openExperiment);
+// Listen for close click
+closeBtn.addEventListener('click', closeExperiment);
+// Listen for outside window
+window.addEventListener('click', outsideClick);
+
+//Function to open experiment
+function openExperiment(){
+  experiment.style.display = 'block';
+}
+// Function to close experiment
+function closeExperiment(){
+  experiment.style.display = 'none';
+}
+// Function to close experiment outside click
+function outsideClick(e){
+  if(e.target == experiment){
+    experiment.style.display = 'none';
+  }
+}
+// JavaScript Confirm and Alert Box  
+function confirm_process() {
+  var answer = confirm("Press the Ok button if you like the dogs!") 
+    if(answer)
+      alert("Bienvenue!")
+  else
+window.location.replace("https://www.example.com");
+
+}
+</script>
+</html>
